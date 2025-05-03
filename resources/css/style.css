@@ -1,0 +1,378 @@
+/*
+--|-- - - - - - - - - - - - - -=>|
+  |------------------------------|
+  | # ROOT FOR CUSTOM PROPERTIES |
+  |------------------------------|
+--|-- - - - - - - - - - - - - -=>|
+*/
+:root {
+  /* COLORS */
+  /* * PRIMARY * */
+  --primary-light-red: hsl(0, 100%, 67%);
+  --primary-light-red-bg: hsl(0 100% 67% / 0.05);
+  --primary-orangey-yellow: hsl(39, 100%, 56%);
+  --primary-orangey-yellow-bg: hsl(39 100% 56% / 0.05);
+  --primary-green-teal: hsl(166, 100%, 37%);
+  --primary-green-teal-bg: hsl(166 100% 37% / 0.05);
+  --primary-cobalt-blue: hsl(234, 85%, 45%);
+  --primary-cobalt-blue-bg: hsl(234 85% 45% / 0.05);
+
+  /* * GRADIENT * */
+  --gradient-bg: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --gradient-circle: linear-gradient(
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+
+  /* * NEUTRAL * */
+  --neutral-pale-blue: hsl(221, 100%, 96%);
+  --neutral-light-lavender: hsl(241, 100%, 89%);
+  --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - -=>|
+  |----------------------------------------|
+  | # CUSTOM FONT LOADING USING @FONT-FACE |
+  |----------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - -=>|
+*/
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/hanken-grotesk-v8-latin-500.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/hanken-grotesk-v8-latin-700.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../assets/fonts/hanken-grotesk-v8-latin-800.woff2")
+    format("woff2");
+}
+
+/*
+--|-- - - - - - - - - =>|
+  |---------------------|
+  | # RESET BOILERPLATE |
+  |---------------------|
+--|-- - - - - - - - - =>|
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Hanken Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  display: grid;
+  gap: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  background: linear-gradient(hsl(241 81% 54% / 0.7), hsla(0, 0%, 0%, 0) 50%);
+  width: min(100%, 37.5rem);
+}
+
+/*
+--|-- - - - - - - - -=>|
+  |--------------------|
+  | # CONTAINER CLASS |
+  |--------------------|
+--|-- - - - - - - - -=>|
+*/
+.grid--container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*
+--|-- - - - - - -=>|
+  |----------------|
+  | # RESULT CLASS |
+  |----------------|
+--|-- - - - - - -=>|
+*/
+.result {
+  background-image: var(--gradient-bg);
+  border-radius: 0 0 30px 30px;
+  color: hsl(0 0% 100% / 0.7);
+  text-align: center;
+
+  padding-block: 30px;
+  padding-inline: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/*
+--|-- - - - - - - - - - =>|
+  |-----------------------|
+  | # RESULT__SCORE CLASS |
+  |-----------------------|
+--|-- - - - - - - - - - =>|
+*/
+.result__score {
+  background: var(--gradient-circle);
+  color: hsl(0 0% 100% / 0.4);
+  font-size: 16px;
+
+  padding: 35px 50px;
+  border-radius: 100%;
+}
+
+/*
+--|-- - - - - - - - - - - - - - - =>|
+  |---------------------------------|
+  | # RESULT__SCORE--OBTAINED CLASS |
+  |---------------------------------|
+--|-- - - - - - - - - - - - - - - =>|
+*/
+.result__score--obtained {
+  font-size: 52px;
+  font-weight: 800;
+  color: white;
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - =>|
+  |-------------------------------------|
+  | # RESULT__DETAILS--COMPLEMENT CLASS |
+  |-------------------------------------|
+--|-- - - - - - - - - - - - - - - - - =>|
+*/
+.result__details--complement {
+  font-size: 22px;
+  color: #fff;
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - -=>|
+  |--------------------------------------|
+  | # RESULT__DETAILS--DESCRIPTION CLASS |
+  |--------------------------------------|
+--|-- - - - - - - - - - - - - - - - - -=>|
+*/
+.result__details--description {
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+/*
+--|-- - - - - - - =>|
+  |-----------------|
+  | # SUMMARY CLASS |
+  |-----------------|
+--|-- - - - - - - =>|
+*/
+.summary {
+  padding: 30px;
+  display: grid;
+  gap: 25px;
+}
+
+/*
+--|-- - - - - - - - - - -=>|
+  |------------------------|
+  | # SUMMARY__LABEL CLASS |
+  |------------------------|
+--|-- - - - - - - - - - -=>|
+*/
+.summary__label {
+  color: hsla(0, 0%, 0%, 0.75);
+  font-weight: 700;
+}
+
+/*
+--|-- - - - - - - - - - - -=>|
+  |--------------------------|
+  | # SUMMARY__DETAILS CLASS |
+  |--------------------------|
+--|-- - - - - - - - - - - -=>|
+*/
+.summary__details {
+  display: grid;
+  gap: 10px;
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - - - - - - - =>|
+  |---------------------------------------------------|
+  | # ALL THE DIV'S INSIDE ==> SUMMARY__DETAILS CLASS |
+  |---------------------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - - - - - - - =>|
+*/
+.summary__details div {
+  border-radius: 12px;
+  padding: 6px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - -=>|
+  |--------------------------------------|
+  | # DETAILS__SCORE CLASS +> STRONG TAG |
+  |--------------------------------------|
+--|-- - - - - - - - - - - - - - - - - -=>|
+*/
+.details__score {
+  color: hsl(0 0% 0% / 0.5);
+  font-size: 16px;
+}
+
+.details__score strong {
+  color: var(--neutral-dark-gray-blue);
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - - - - - - - - -=>|
+  |------------------------------------------------------|
+  | # SUMMARY__DETAILS--REACTION + REACTION--LABEL CLASS |
+  |------------------------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - - - - - - - - -=>|
+*/
+.summary__details--reaction {
+  background: var(--primary-light-red-bg);
+}
+.reaction--label {
+  color: var(--primary-light-red);
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+  |--------------------------------------------------|
+  | # SUMMARY__DETAILS--MEMORY + MEMORY--LABEL CLASS |
+  |--------------------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+*/
+.summary__details--memory {
+  background: var(--primary-orangey-yellow-bg);
+}
+.memory--label {
+  color: var(--primary-orangey-yellow);
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+  |--------------------------------------------------|
+  | # SUMMARY__DETAILS--VERBAL + VERBAL--LABEL CLASS |
+  |--------------------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+*/
+.summary__details--verbal {
+  background: var(--primary-green-teal-bg);
+}
+.verbal--label {
+  color: var(--primary-green-teal);
+}
+
+/*
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+  |--------------------------------------------------|
+  | # SUMMARY__DETAILS--VISUAL + VISUAL--LABEL CLASS |
+  |--------------------------------------------------|
+--|-- - - - - - - - - - - - - - - - - - - - - - - -=>|
+*/
+.summary__details--visual {
+  background: var(--primary-cobalt-blue-bg);
+}
+.visual--label {
+  color: var(--primary-cobalt-blue);
+}
+
+/*
+--|-- - - - - - -=>|
+  |----------------|
+  | # BUTTON CLASS |
+  |----------------|
+--|-- - - - - - -=>|
+*/
+.button {
+  background: var(--neutral-dark-gray-blue);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  border-radius: 50px;
+
+  padding-block: 16px;
+}
+
+/*
+--|-- - - - - - -=>|
+  |----------------|
+  | # BUTTON HOVER |
+  |----------------|
+--|-- - - - - - -=>|
+*/
+.button:hover {
+  background: var(--gradient-bg);
+}
+
+.attribution {
+  text-align: center;
+  font-size: 14px;
+}
+
+/*
+--|-- - - - - - =>|
+  |---------------|
+  | # Media Query |
+  |---------------|
+--|-- - - - - - =>|
+*/
+@media (min-width: 37.5em) {
+  body {
+    background-color: var(--neutral-pale-blue);
+  }
+
+  main {
+    background: white;
+    margin-inline: auto;
+    margin-top: 150px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.103);
+  }
+
+  .grid--container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .result {
+    border-radius: 30px;
+  }
+
+  .summary {
+    padding-bottom: 45px;
+  }
+}
