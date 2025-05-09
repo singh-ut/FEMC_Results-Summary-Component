@@ -81,12 +81,19 @@ a {
   text-decoration: none;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Hanken Grotesk", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
   display: grid;
   gap: 20px;
+
+  align-content: center;
 }
 
 img {
@@ -98,6 +105,7 @@ img {
 main {
   background: linear-gradient(hsl(241 81% 54% / 0.7), hsla(0, 0%, 0%, 0) 50%);
   width: min(100%, 37.5rem);
+  margin-inline: auto;
 }
 
 /*
@@ -358,8 +366,6 @@ main {
 
   main {
     background: white;
-    margin-inline: auto;
-    margin-top: 150px;
     border-radius: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.103);
   }
